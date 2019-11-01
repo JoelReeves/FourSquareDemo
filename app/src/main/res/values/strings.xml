@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FourSquareDemo</string>
+    <string name="location_error"> Please grant location permission to obtain venues</string>
 </resources>
