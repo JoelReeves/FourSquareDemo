@@ -12,8 +12,8 @@ class VenueRepository(val service: FourSquareService) {
 
     companion object {
         private val TAG = VenueRepository::class.java.simpleName
-        private const val CLIENT_ID = "0JUUKA0YSYMO5OGZIRTFLGFJLP1KGSAL0NZUKE2ZMSFWE01W"
-        private const val CLIENT_SECRET = "ICYGQKSKAEDLPK0DS3YI1OKHGF4JRSWUIHUSK4UYUVCS53P2"
+        private const val CLIENT_ID = "GVFGGPFFOJJKO5OPVDZYG1022L20OMFGQOATKNUWMODGPM02"
+        private const val CLIENT_SECRET = "UUX53NSL0MP3PDDJYDBHN1CNQWPBJBKR13TG5H2RLPE3CDVR"
         private const val VENUE_LIMIT = "30"
 
         private val dateString: String by lazy {
