@@ -12,4 +12,6 @@ class VenueEndpointException : VenueException("requested endpoint does not exist
 
 class VenueUnauthorizedException : VenueException("user not authorized to see information")
 
+class VenueQuotaException : VenueException("daily api quota exceeded")
+
 class VenueServerException : VenueException("server is unavailable")

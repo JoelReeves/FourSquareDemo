@@ -12,9 +12,9 @@ class VenueRepository(val service: FourSquareService) {
 
     companion object {
         private val TAG = VenueRepository::class.java.simpleName
-        private const val CLIENT_ID = "KIOWMNAJN3W4YDR3LHOHRQTB4BDRUFGE4EPHGAZ1VI1AL14U"
-        private const val CLIENT_SECRET = "UI4VBJISEV1W3B1TRBJEVUU5YUUIWAQT2VGB3MTFSR35DPYQ"
-        private const val VENUE_LIMIT = "50"
+        private const val CLIENT_ID = "HWR4HRSEZ3BD0F5EP1GMBGNJRP4CE2PUXDEIFPUQXGLDGITB"
+        private const val CLIENT_SECRET = "YCWGWAUKIKN1LI310BPY440RH0WAMT1L240P15VXCRTWHJHK"
+        private const val VENUE_LIMIT = "20"
 
         private val dateString: String by lazy {
             val formatter = SimpleDateFormat("yyyyMMdd", Locale.US)
@@ -58,6 +58,11 @@ class VenueRepository(val service: FourSquareService) {
     }
 
     private fun venueError(error: Throwable): Single<Venue> {
+        if (error is HttpException) {
+            when (error.code()) {
+                429 -> return Single.error(VenueQuotaException())
+            }
+        }
         return Single.error(error)
     }
 }
