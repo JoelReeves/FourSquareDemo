@@ -4,15 +4,13 @@ import android.content.Context
 import dagger.Module
 import dagger.Provides
 import okhttp3.Cache
-import okhttp3.HttpUrl
 import java.io.File
 import javax.inject.Named
 import javax.inject.Singleton
-import javax.xml.datatype.DatatypeConstants.SECONDS
 import okhttp3.OkHttpClient
-import androidx.annotation.NonNull
 import net.joelreeves.foursquaredemo.data.services.FourSquareService
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
@@ -21,7 +19,7 @@ import java.util.concurrent.TimeUnit
 class NetworkModule {
 
     companion object {
-        private const val BASE_URL = "https://api.foursquare.com/v2"
+        private const val BASE_URL = "https://api.foursquare.com/v2/"
         private const val NETWORK_CACHE = "network_cache"
         private const val KB = 1024L
         private const val CACHE_SIZE = 20 * KB * KB
@@ -59,6 +57,7 @@ class NetworkModule {
             .client(client)
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
             .create(FourSquareService::class.java)
     }
