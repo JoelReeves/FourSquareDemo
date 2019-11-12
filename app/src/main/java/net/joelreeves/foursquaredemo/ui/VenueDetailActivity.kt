@@ -50,6 +50,11 @@ class VenueDetailActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+    }
+
     private fun showVenueDetail(venue: Venue) {
         supportActionBar?.title = venue.name
         imageLoader.loadImage(formatter.formatVenueImageUrl(venue), venueImage)
