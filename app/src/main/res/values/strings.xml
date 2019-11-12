@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">FourSquareDemo</string>
-    <string name="location_error"> Please grant location permission to obtain venues</string>
+    <string name="venues_activity_near_me_label">Venues near me</string>
+    <string name="venues_activity_near_city_label">Venues near %s</string>
+    <string name="network_error">Please check your network connection</string>
+    <string name="location_permissions_error"> Please grant location permission to obtain venues</string>
+    <string name="location_error">Unable to obtain location. Please try again</string>
+    <string name="location_error_retry">Retry</string>
+    <string name="venues_error">Error retrieving venues. Please try again</string>
+    <string name="venues_city_error">Please enter a valid city name</string>
+    <string name="venue_distance">%s mi</string>
+    <string name="venue_detail_error">Error displaying venue. Please try again</string>
+    <string name="venue_description_missing">Not enough details given for description.</string>
+    <string name="venue_location">Location</string>
+    <string name="venue_search">Search</string>
+    <string name="venue_search_hint">Enter location</string>
 </resources>

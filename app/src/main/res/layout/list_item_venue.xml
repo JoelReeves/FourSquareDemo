@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp">
+
+    <ImageView
+        android:id="@+id/venue_image"
+        android:layout_width="@dimen/venue_list_dimensions"
+        android:layout_height="@dimen/venue_list_dimensions"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/venue_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/venue_image"
+        app:layout_constraintLeft_toRightOf="@id/venue_image"
+        app:layout_constraintTop_toTopOf="@id/venue_image"
+        tools:text="Statue of Liberty" />
+
+    <TextView
+        android:id="@+id/venue_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/venue_name"
+        app:layout_constraintTop_toBottomOf="@id/venue_name"
+        tools:text="1.0 mi" />
+
+    <TextView
+        android:id="@+id/venue_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintLeft_toRightOf="@id/venue_distance"
+        app:layout_constraintTop_toBottomOf="@id/venue_name"
+        tools:text="New York" />
+
+    <TextView
+        android:id="@+id/venue_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/venue_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/venue_image"
+        tools:text="9.0"
+        tools:textColor="@color/colorPrimaryDark" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
