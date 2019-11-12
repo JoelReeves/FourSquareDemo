@@ -1,6 +1,8 @@
 package net.joelreeves.foursquaredemo.data.models
 
 import com.google.gson.annotations.SerializedName
+import net.joelreeves.foursquaredemo.data.models.Icon
+import java.io.Serializable
 
 data class Category(
     @SerializedName("id") val id: String,
@@ -9,4 +11,4 @@ data class Category(
     @SerializedName("shortName") val shortName: String,
     @SerializedName("icon") val icon: Icon,
     @SerializedName("primary") val primary: Boolean
-)
+) : Serializable
