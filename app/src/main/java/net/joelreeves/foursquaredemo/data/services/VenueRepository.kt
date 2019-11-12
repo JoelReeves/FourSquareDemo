@@ -12,9 +12,9 @@ class VenueRepository(val service: FourSquareService) {
 
     companion object {
         private val TAG = VenueRepository::class.java.simpleName
-        private const val CLIENT_ID = "HWR4HRSEZ3BD0F5EP1GMBGNJRP4CE2PUXDEIFPUQXGLDGITB"
-        private const val CLIENT_SECRET = "YCWGWAUKIKN1LI310BPY440RH0WAMT1L240P15VXCRTWHJHK"
-        private const val VENUE_LIMIT = "20"
+        private const val CLIENT_ID = "0JUUKA0YSYMO5OGZIRTFLGFJLP1KGSAL0NZUKE2ZMSFWE01W"
+        private const val CLIENT_SECRET = "ICYGQKSKAEDLPK0DS3YI1OKHGF4JRSWUIHUSK4UYUVCS53P2"
+        private const val VENUE_LIMIT = "30"
 
         private val dateString: String by lazy {
             val formatter = SimpleDateFormat("yyyyMMdd", Locale.US)
