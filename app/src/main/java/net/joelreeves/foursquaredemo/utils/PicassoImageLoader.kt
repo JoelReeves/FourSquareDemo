@@ -5,7 +5,7 @@ import android.widget.ImageView
 import com.squareup.picasso.Picasso
 import net.joelreeves.foursquaredemo.R
 
-class FourSquareImageLoader : ImageLoader {
+class PicassoImageLoader : ImageLoader {
 
     override fun loadImage(imageUrl: String?, imageView: ImageView) {
         if (TextUtils.isEmpty(imageUrl)) {

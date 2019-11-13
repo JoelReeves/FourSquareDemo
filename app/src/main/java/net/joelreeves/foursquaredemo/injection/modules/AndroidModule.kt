@@ -9,7 +9,7 @@ import dagger.Module
 import dagger.Provides
 import net.joelreeves.foursquaredemo.data.services.FourSquareService
 import net.joelreeves.foursquaredemo.data.services.VenueRepository
-import net.joelreeves.foursquaredemo.utils.FourSquareImageLoader
+import net.joelreeves.foursquaredemo.utils.PicassoImageLoader
 import net.joelreeves.foursquaredemo.utils.ImageLoader
 import okhttp3.OkHttpClient
 import javax.inject.Singleton
@@ -30,7 +30,7 @@ class AndroidModule(private val application: Application) {
     @Provides
     @Singleton
     fun provideImageLoader() : ImageLoader {
-        return FourSquareImageLoader()
+        return PicassoImageLoader()
     }
 
     @Provides
