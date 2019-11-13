@@ -36,13 +36,14 @@ class VenuesAdapter(
         private val venueCity: TextView = view.findViewById(R.id.venue_city)
         private val venueRating: TextView = view.findViewById(R.id.venue_rating)
 
+        private val resources by lazy { itemView.resources }
         private val formatter by lazy { VenueFormatter }
 
         fun bindVenue(venue: Venue) {
             itemView.setOnClickListener {listener.onVenueClick(venue)}
             imageLoader.loadImage(formatter.formatVenueImageUrl(venue), venueImage)
             venueName.text = venue.name
-            venueDistance.text = formatter.formatMiles(itemView.resources, venue.distance)
+            venueDistance.text = resources.getString(R.string.venue_distance, formatter.formatMiles(venue.distance))
             venueCity.text = venue.location.city
             venueRating.text = venue.rating.toString()
             venueRating.setTextColor(formatter.formatRatingColor(venue.ratingColor))

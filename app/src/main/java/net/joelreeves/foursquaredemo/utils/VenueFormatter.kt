@@ -1,8 +1,6 @@
 package net.joelreeves.foursquaredemo.utils
 
-import android.content.res.Resources
 import android.graphics.Color
-import net.joelreeves.foursquaredemo.R
 import net.joelreeves.foursquaredemo.data.models.venuemodel.Venue
 import java.math.RoundingMode
 
@@ -12,10 +10,10 @@ object VenueFormatter {
     private const val DECIMAL_PLACES = 2
     private const val ORIGINAL_SIZE = "original"
 
-    fun formatMiles(res: Resources, meters: Int): String {
+    fun formatMiles(meters: Int): String {
         val miles = meters * METERS_TO_MILES
         val roundedMiles = miles.toBigDecimal().setScale(DECIMAL_PLACES, RoundingMode.UP).toString()
-        return res.getString(R.string.venue_distance, roundedMiles)
+        return roundedMiles
     }
 
     fun formatRatingColor(colorString: String?): Int {
@@ -32,7 +30,7 @@ object VenueFormatter {
             else -> {
                 val prefix = bestPhoto.prefix
                 val suffix = bestPhoto.suffix
-                return prefix+ ORIGINAL_SIZE+suffix
+                return prefix + ORIGINAL_SIZE + suffix
             }
         }
     }
@@ -43,6 +41,6 @@ object VenueFormatter {
         val city = venueLocation.city ?: ""
         val state = venueLocation.state ?: ""
         val zip = venueLocation.postalCode ?: ""
-        return street+"\n"+city+", "+state+" "+zip
+        return street + "\n" + city + ", " + state + " " + zip
     }
 }
