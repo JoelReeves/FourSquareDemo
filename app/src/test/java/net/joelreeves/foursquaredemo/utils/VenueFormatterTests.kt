@@ -31,19 +31,19 @@ class VenueFormatterTests {
 
     @Test
     fun invalidColorStringReturnsBlack() {
-        val expectedColorString = Color.BLACK
+        val expectedColor = Color.BLACK
         val actualColor = formatter.formatRatingColor(null)
 
-        assertEquals(expectedColorString, actualColor)
+        assertEquals(expectedColor, actualColor)
     }
 
     @Test
     fun validColorStringReturnsCorrectColor() {
         val colorString = "FFFF0000"
-        val expectedColorString = Color.RED
+        val expectedColor = Color.RED
         val actualColor = formatter.formatRatingColor(colorString)
 
-        assertEquals(expectedColorString, actualColor)
+        assertEquals(expectedColor, actualColor)
     }
 
     @Test
