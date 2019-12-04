@@ -67,6 +67,7 @@ dependencies {
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
     testImplementation 'com.google.truth:truth:1.0'
     testImplementation "androidx.test:core:$androidXTestVersion"
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
 
     androidTestImplementation "androidx.test:core:$androidXTestVersion"
     androidTestImplementation "androidx.test:core-ktx:$androidXTestVersion"
