@@ -1,5 +1,6 @@
 package net.joelreeves.foursquaredemo.ui
 
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.*
 import io.reactivex.schedulers.Schedulers
 import net.joelreeves.foursquaredemo.data.models.venuemodel.Venue
@@ -12,8 +13,8 @@ class VenueViewModel @Inject constructor(private val repository: VenueRepository
         private val TAG = VenueViewModel::class.java.simpleName
     }
 
-    private val latLng = MutableLiveData<String>()
-    private val city = MutableLiveData<String>()
+    @VisibleForTesting val latLng = MutableLiveData<String>()
+    @VisibleForTesting val city = MutableLiveData<String>()
 
     val venuesNearMe: LiveData<List<Venue>> =
         Transformations.switchMap(latLng) {

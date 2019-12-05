@@ -1,5 +1,6 @@
 package net.joelreeves.foursquaredemo
 
+import net.joelreeves.foursquaredemo.data.models.venuelist.VenueSearchModel
 import net.joelreeves.foursquaredemo.data.models.venuemodel.*
 
 object VenueTestUtils {
@@ -45,4 +46,18 @@ object VenueTestUtils {
             distance = 3456
         )
     }
+
+    fun getVenueSearchModel(): VenueSearchModel {
+        return VenueSearchModel(
+            id = "1",
+            name = "Test Search Model",
+            location = net.joelreeves.foursquaredemo.data.models.venuelist.Location("", "", 0.0F, 0.0F,
+                emptyList(), 0, "00000", "", "", "", "USA", emptyList()),
+            categories = emptyList()
+        )
+    }
+
+    fun getVenues(): List<Venue> = listOf(getVenue())
+
+    fun getVenueSearchModels(): List<VenueSearchModel> = listOf(getVenueSearchModel())
 }
